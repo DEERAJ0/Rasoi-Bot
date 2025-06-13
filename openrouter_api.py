@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import streamlit as st
 
 load_dotenv()
-api_key = os.getenv("OPENROUTER_API_KEY", st.secrets.get("OPENROUTER_API_KEY", None))
+api_key = os.getenv("OPENROUTER_API_KEY") or st.secrets.get("OPENROUTER_API_KEY", None))
 MODEL = "sarvamai/sarvam-m:free"  # Free model
 
 def get_recipe(query):
