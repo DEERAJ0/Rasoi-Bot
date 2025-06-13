@@ -3,7 +3,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv("OPENROUTER_API_KEY")
+api_key = os.getenv("OPENROUTER_API_KEY", st.secrets.get("OPENROUTER_API_KEY", None))
 MODEL = "sarvamai/sarvam-m:free"  # Free model
 
 def get_recipe(query):
